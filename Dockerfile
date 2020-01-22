@@ -1,7 +1,5 @@
 FROM eclipse/ubuntu_jdk8
 ARG JAR_FILE=/build/libs/*.jar
-ARG JARNAME=(find ./build/libs/*.jar | cut -d - -f 4)
-ARG VERSION=(expr substr ${JARNAME} 1 5)
-ADD ${JAR_FILE} /home/echoServer-${VERSION}-SNAPSHOT.jar
+ADD ${JAR_FILE} /home/${JAR_FILE}
 ENV JAVA_OPTS=""
-CMD ["java","-jar","/home/echoServer-${VERSION}-SNAPSHOT.jar"]
+CMD ["java","-jar","/home/${JAR_FILE}"]
