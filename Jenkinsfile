@@ -24,7 +24,7 @@ node {
         }
         else{
             
-            bat 'docker build -t jars . && docker tag jars:1.0 jeong/jars:latest && docker push localhost:5000/jars:1.0'
+            bat 'docker build -t jars . && docker tag jars:latest jeong/jars:0.1 && docker push localhost:5001/jeong/jars:1.0'
         }
     }
 }
