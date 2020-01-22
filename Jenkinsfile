@@ -1,8 +1,4 @@
 node {
-    environment {
-        JARNAME= $(find ./build/libs/*.jar | cut -d - -f 4)
-        VERSION= $(expr substr $JARNAME 1 5)
-    }
     stage ('clone') {
         checkout scm
     }
