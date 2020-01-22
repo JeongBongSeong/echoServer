@@ -1,14 +1,15 @@
-node {
+pipeline{
+    agent any
     stages {
         stage ('clone') {
-            step{
+            steps{
                 checkout scm
             }
         }
     }
     stages{
         stage ('gradlew build') {
-            step{
+            steps{
                 if(isUnix()) {
                     sh '/*sudo */./gradlew clean build'
                 }
@@ -17,8 +18,10 @@ node {
                 }
             }
         }
+    }
+    stages{
         stage ('Packaging'){
-            step{
+            steps{
                 if(isUnix()) {
                     sh '/*sudo */./gradlew clean bootjar'
                 }
@@ -28,7 +31,7 @@ node {
             }
         }
         stage ('Docker Build'){
-            step{
+            steps{
                 if(isUnix()) {
                     sh 'docker build -t jars .'//&& /*sudo */docker tag jars qhdtjd0104/jars:latest && /*sudo */docker push qhdtjd0104/jars'
                 }
