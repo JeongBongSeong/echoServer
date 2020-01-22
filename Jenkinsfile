@@ -1,4 +1,8 @@
 node {
+    environment {
+        JARNAME= $(find ./build/libs/*.jar | cut -d - -f 4)
+        VERSION= $(expr substr $JARNAME 1 5)
+    }
     stage ('clone') {
         checkout scm
     }
@@ -23,6 +27,7 @@ node {
             sh 'docker build -t jars .'//&& /*sudo */docker tag jars qhdtjd0104/jars:latest && /*sudo */docker push qhdtjd0104/jars'
         }
         else{
+            
             bat 'docker build -t jars . && docker tag jars localhost:5000/jars:latest && docker push localhost:5000/jars'
         }
     }
