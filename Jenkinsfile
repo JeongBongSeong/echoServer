@@ -20,7 +20,7 @@ node {
     }
     stage ('Docker Build'){
         if(isUnix()) {
-            sh 'docker build -t jars .'//&& /*sudo */docker tag jars qhdtjd0104/jars:latest && /*sudo */docker push qhdtjd0104/jars'
+            sh 'docker build -t jars . && sudo docker tag jars qhdtjd0104/jars:latest && sudo docker push qhdtjd0104/jars'
         }
         else{
             bat 'docker build -t jars . && docker tag jars:latest 10.10.70.44:5000/jars:latest && docker push 10.10.70.44:5000/jars'
