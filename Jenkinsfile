@@ -10,6 +10,20 @@ node {
             bat 'gradlew.bat clean build'
         }
     }
+    stage ('analysis'){
+        def mvnHome = tool 'mvn-default'
+ 
+        sh "${mvnHome}/bin/mvn -batch-mode -V -U -e checkstyle:checkstyle pmd:pmd pmd:cpd findbugs:findbugs spotbugs:spotbugs"
+ 
+        def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
+        publishIssues issues:[checkstyle]
+    
+        def pmd = scanForIssues tool: [$class: 'Pmd'], pattern: '**/target/pmd.xml'
+        publishIssues issues:[pmd]
+         
+        def cpd = scanForIssues tool: [$class: 'Cpd'], pattern: '**/target/cpd.xml'
+        publishIssues issues:[cpd]
+    }
     stage ('Packaging'){
         if(isUnix()) {
             sh './gradlew clean bootjar'
