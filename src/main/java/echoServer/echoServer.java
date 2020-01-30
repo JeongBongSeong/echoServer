@@ -11,7 +11,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class echoServer {
-    public static void main(String[] varargs) {
+    public static void main(String[] args) {
         ServerSocket mServerSocket;
         Socket mSocket;
 
