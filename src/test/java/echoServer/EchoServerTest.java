@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class echoServerTest {
     @Test public void testAppHasAGreeting() {
-        echoServer classUnderTest = new echoServer();
+        EchoServer classUnderTest = new EchoServer();
         assertNotNull("app should have a greeting", classUnderTest);
     }
 }
