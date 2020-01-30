@@ -44,8 +44,8 @@ public class EchoServer {
             }
             mSocket.close();
             mServerSocket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exc) {
+            exc.printStackTrace();
         }
     }
 }
