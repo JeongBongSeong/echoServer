@@ -12,8 +12,8 @@ import java.net.Socket;
 
 public class EchoServer {
     /**
-     *@author JJJ
-     */
+    *@author JJJ
+    */
     public static void main(String[] args) {
         ServerSocket mServerSocket;
         Socket mSocket;
