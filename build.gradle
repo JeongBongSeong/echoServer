@@ -43,7 +43,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = echoServer.EchoServer.class
+    mainClassName = 'echoServer.EchoServer'
 }
 
 checkstyle {
