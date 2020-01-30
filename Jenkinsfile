@@ -13,7 +13,7 @@ node {
     stage ('analysis'){        
         if(isUnix()) {
             sh './gradlew check'
-            checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**\build\reports\checkstyle\main.xml', unHealthy: ''
+            checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports/checkstyle/main.xml', unHealthy: ''
         }
         else{
             bat 'gradlew.bat check'
