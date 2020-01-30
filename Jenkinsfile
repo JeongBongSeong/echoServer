@@ -17,6 +17,7 @@ node {
         }
         else{
             bat 'gradlew.bat check'
+            checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports/checkstyle/main.xml', unHealthy: ''
         }
     }
     stage ('Packaging'){
