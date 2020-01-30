@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class echoServer {
+public class EchoServer {
     public static void main(String[] args) {
         ServerSocket mServerSocket;
         Socket mSocket;
