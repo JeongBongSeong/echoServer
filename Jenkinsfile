@@ -14,10 +14,12 @@ node {
         if(isUnix()) {
             sh './gradlew check'
             checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports/checkstyle/main.xml', unHealthy: ''
+            pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports//pmd/main.xml, infer-out/report.xml', unHealthy: ''
         }
         else{
             bat 'gradlew.bat check'
             checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports/checkstyle/main.xml', unHealthy: ''
+            pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports//pmd/main.xml, infer-out/report.xml', unHealthy: ''
         }
     }
     stage ('Packaging'){
