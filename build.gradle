@@ -38,7 +38,15 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'echoServer.EchoServer.echoServer.class'
+    mainClassName = 'echoServer.EchoServer'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.echoServer.EchoServer'
+        )
+    }
 }
 
 checkstyle {
