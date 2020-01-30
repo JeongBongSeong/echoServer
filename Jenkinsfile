@@ -22,7 +22,7 @@ node {
             pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports//pmd/main.xml, infer-out/report.xml', unHealthy: ''
         }
     }
-    stage ('build') {
+    stage ('build & Packaging') {
         if(isUnix()) {
             sh './gradlew build'
         }
@@ -30,14 +30,6 @@ node {
             bat 'gradlew.bat build'
         }
     }    
-    stage ('Packaging'){
-        if(isUnix()) {
-            sh './gradlew clean bootjar'
-        }
-        else{
-            bat 'gradlew.bat clean bootjar'
-        }
-    }
     stage ('Docker Build'){
         if(isUnix()) {
             sh 'docker build -t jars . && docker tag jars localhost:5000/jars:latest && docker push localhost:5000/jars'
