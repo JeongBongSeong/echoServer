@@ -15,7 +15,7 @@ public class EchoServer {
     /** 
     *{@author JJJ} 
     */
-    public static void main(String[] args) {
+    public void echoServer(){
         ServerSocket mServerSocket;
         Socket mSocket;
 
@@ -48,6 +48,9 @@ public class EchoServer {
         } catch (IOException exc) {
             exc.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        new EchoServer().echoServer();
     }
 }
 /*
