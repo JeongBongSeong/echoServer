@@ -10,13 +10,10 @@ node {
             bat 'gradlew.bat clean build'
         }
     }
-    stage ('analysis'){
-        
-        def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
-        publishIssues issues:[checkstyle]
-        
+    stage ('analysis'){        
         if(isUnix()) {
             sh './gradlew check'
+            checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/config/checkstyle/main.xml', unHealthy: ''
         }
         else{
             bat 'gradlew.bat check'
