@@ -19,7 +19,7 @@ plugins {
     id 'pmd'
 }
 
-group = 'com.EchoServer'
+group = 'com.echoServer'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -43,7 +43,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'EchoServer.EchoServer'
+    mainClassName = 'echoServer.EchoServer'
 }
 
 checkstyle {
