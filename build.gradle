@@ -16,7 +16,7 @@ plugins {
 
     id 'checkstyle'
 
-    //id 'pmd'
+    id 'pmd'
 }
 
 group = 'com.echoServer'
@@ -50,7 +50,10 @@ checkstyle {
     toolVersion = 7.1
     config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
 }
-
+pmd {
+    ignoreFailures = true
+    ruleSetFiles = files("config/pmd/ruleset.xml")
+}
 /*
 ext {
     pmdVersion = '5.4.1'
