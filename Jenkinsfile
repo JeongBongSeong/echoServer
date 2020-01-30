@@ -11,6 +11,10 @@ node {
         }
     }
     stage ('analysis'){
+        
+        def checkstyle = scanForIssues tool: [$class: 'CheckStyle'], pattern: '**/target/checkstyle-result.xml'
+        publishIssues issues:[checkstyle]
+        
         if(isUnix()) {
             sh './gradlew check'
         }
