@@ -13,7 +13,6 @@ import java.net.Socket;
 public class EchoServer {
     /**
      *
-     * @echoServer
      */
     public static void main(String[] args) {
         ServerSocket mServerSocket;
