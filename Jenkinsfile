@@ -2,7 +2,7 @@ node {
     stage ('clone') {
         checkout scm
     }
-    stage ('gradlew clean') {
+    stage ('clean') {
         if(isUnix()) {
             sh './gradlew clean'
         }
@@ -22,7 +22,7 @@ node {
             pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/build/reports//pmd/main.xml, infer-out/report.xml', unHealthy: ''
         }
     }
-    stage ('gradlew build') {
+    stage ('build') {
         if(isUnix()) {
             sh './gradlew build'
         }
