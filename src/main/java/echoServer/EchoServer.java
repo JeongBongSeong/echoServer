@@ -39,7 +39,7 @@ public class EchoServer {
                     break;
                 }
 
-                // 클
+                //
                 pwSend.println(strRecvMsg);		//
                 pwSend.flush();
             }
