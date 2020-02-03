@@ -15,4 +15,4 @@ USER ksign
 
 RUN cd /home/ksign && unzip echoServer-0.0.1-SNAPSHOT.zip && rm echoServer-0.0.1-SNAPSHOT.zip
 ENV JAVA_OPTS=""
-CMD ["cd","&&","cd","/home/ksign/echoServer-0.0.1-SNAPSHOT/bin/","&&","./echoServer" ]
+CMD ["cd /home/ksign/echoServer-0.0.1-SNAPSHOT/bin/ && ./echoServer"]
