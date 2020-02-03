@@ -3,6 +3,8 @@ FROM eclipse/ubuntu_jdk8
 
 ARG JAR_FILE=/build/distributions/echoServer-0.0.1-SNAPSHOT.zip
 
+USER root
+
 RUN useradd -ms /bin/bash ksign
 RUN echo "ksign:iotiot" | chpasswd
 RUN adduser ksign sudo
