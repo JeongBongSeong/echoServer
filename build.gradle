@@ -12,7 +12,7 @@ plugins {
     //id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
-    id 'war'
+    //id 'war'
     id 'checkstyle'
 
     id 'pmd'
@@ -35,13 +35,13 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
-
-// bootwar
+    
+//bootwar
     /*implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }*/
-    //war
+//war
     /*implementation module(":compile:1.0") {
         dependency ":compile-transitive-1.0@jar"
         dependency ":providedCompile-transitive:1.0@jar"
@@ -67,11 +67,11 @@ jar {
         )
     }
 }
-
+/*
 war {
     enabled=true
 }
-
+*/
 checkstyle {
     toolVersion = 7.1
     config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
