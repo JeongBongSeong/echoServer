@@ -2,7 +2,7 @@ import csv
 import json
 
 csvfile = open('input.csv', 'r')
-jsonfile = open('output.json', 'w')
+jsonfile = open('git_comment.json', 'w')
 
 fieldnames = ("Author","Message")
 reader = csv.DictReader( csvfile, fieldnames)
